@@ -425,6 +425,29 @@ local SectionA = Tab1:CreateSection("Misc")
 local Section3 = Tab2:CreateSection("Menu")
 local Section4 = Tab2:CreateSection("Background")
 
+local Toggle1 = Section1:CreateToggle("Auto Bring Mob", nil, function(State)
+sexs = State
+while sexs do
+    wait(0.5)
+    pcall(function()
+            for i, v in ipairs(Workspace.Live:GetChildren()) do
+                if v:FindFirstChild("Humanoid") and v.Name ~= "Training dummy" and v.Humanoid.Health > 0 then
+                    local Root = Player.Character.HumanoidRootPart
+                    local RootTwo = v.HumanoidRootPart
+                    if (Root.Position - RootTwo.Position).Magnitude < 100 then
+                        Tween(v.HumanoidRootPart, Player.Character.HumanoidRootPart.CFrame.p, 100)
+                        ReplicatedStorage.RemoteEvents.BladeCombatRemote:FireServer(false, nil, nil)
+                        ReplicatedStorage.RemoteEvents.BladeCombatRemote:FireServer(false, nil, nil)
+                        ReplicatedStorage.RemoteEvents.BladeCombatRemote:FireServer(false, nil, nil)
+                    end
+                end
+            end
+        end
+    )
+end
+end)
+
+
 local Toggle1 = Section1:CreateToggle("Auto Attack", nil, function(State)
 w2 = State
 while w2 do
