@@ -1,0 +1,11 @@
+while wait() do
+local args = {
+    [1] = false,
+    [2] = Vector3.new(-6525.7861328125, -4394.84033203125, -3719.5849609375),
+    [3] = CFrame.new(-6525.7861328125, -4394.84033203125, -3719.5849609375) * CFrame.Angles(-0.7982432842254639, 0.7969897389411926, 0.633098304271698),
+    [4] = 1,
+    [5] = Vector3.new(-0.7148008346557617, -0.500429093837738, -0.48849815130233765)
+}
+
+game:GetService("ReplicatedStorage").RemoteEvents.GodKiBlastsBarrageRemote:FireServer(unpack(args))
+end
