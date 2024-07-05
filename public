@@ -1,0 +1,11 @@
+while wait() do
+local args = {
+    [1] = false,
+    [2] = Vector3.new(6760.4794921875, -4820.05712890625, 6791.33447265625),
+    [3] = CFrame.new(6760.4794921875, -4820.05712890625, 6791.33447265625) * CFrame.Angles(-2.3439888954162598, -0.7232763767242432, -2.545646905899048),
+    [4] = 1,
+    [5] = Vector3.new(0.6611328125, -0.5365715622901917, 0.5243991017341614)
+}
+
+game:GetService("ReplicatedStorage").RemoteEvents.PurpleRainRemote:FireServer(unpack(args))
+end
