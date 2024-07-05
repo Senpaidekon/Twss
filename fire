@@ -1,3 +1,4 @@
+while wait() do
 local args = {
     [1] = false,
     [2] = Vector3.new(253.61767578125, -5057.1767578125, 8890.029296875),
@@ -7,3 +8,4 @@ local args = {
 }
 
 game:GetService("ReplicatedStorage").RemoteEvents.BreatheFireRemote:FireServer(unpack(args))
+end
